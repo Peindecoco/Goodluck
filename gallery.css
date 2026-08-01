@@ -1,4 +1,28 @@
-.gpt-body p {
+:root {
+  --bg-1: #f8fbff;
+  --bg-2: #f5f1ff;
+  --bg-3: #fff8ee;
+  --ink: #111827;
+  --muted: #5b6472;
+  --line: rgba(17, 24, 39, 0.1);
+  --card: rgba(255, 255, 255, 0.78);
+  --accent: #7c3aed;
+  --accent-2: #06b6d4;
+  --accent-3: #f97316;
+  --shadow: 0 30px 80px rgba(79, 70, 229, 0.18);
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body.goodluck-page {
+  min-height: 100vh;
+    .gpt-body p {
     font-size: 100%;
   }
  .claim-form-grid {
@@ -22,215 +46,453 @@
     font-size: 16px;
   }
   
+:root {
+  --bg-1: #f8fbff;
+  --bg-2: #f5f1ff;
+  --bg-3: #fff8ee;
+  --ink: #111827;
+  --muted: #5b6472;
+  --line: rgba(17, 24, 39, 0.1);
+  --card: rgba(255, 255, 255, 0.78);
+  --accent: #7c3aed;
+  --accent-2: #06b6d4;
+  --accent-3: #f97316;
+  --shadow: 0 30px 80px rgba(79, 70, 229, 0.18);
 }
 
 /* ===== GOOD LUCK ENTRANCE TEST LANDING PAGE ===== */
 .goodluck-page {
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body.goodluck-page {
   min-height: 100vh;
   background: linear-gradient(180deg, #eefbf4 0%, #fff8da 100%);
+  margin: 0;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(124, 58, 237, 0.22), transparent 28rem),
+    radial-gradient(circle at 82% 18%, rgba(6, 182, 212, 0.2), transparent 26rem),
+    radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.16), transparent 30rem),
+    linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 48%, var(--bg-3) 100%);
+  overflow-x: hidden;
 }
-.goodluck-main {
-  min-height: calc(100vh - 240px);
-  height: auto;
-  padding: 48px 24px;
+
+body.goodluck-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(17, 24, 39, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 24, 39, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 78%);
+}
+
+body.goodluck-page::after {
+  content: "";
+  position: fixed;
+  inset: auto -10% -28% -10%;
+  height: 44vh;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.18), rgba(6, 182, 212, 0.16), rgba(249, 115, 22, 0.14));
+  filter: blur(70px);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 5vw, 72px) clamp(16px, 4vw, 40px);
   overflow: hidden;
 }
+
 .goodluck-hero {
   position: relative;
-  width: min(1120px, 100%);
-  min-height: 680px;
+     width: min(1160px, 100%);
+  min-height: min(760px, calc(100vh - 150px));
   display: flex;
-  align-items: flex-end;
+    align-items: center;
   justify-content: center;
-  padding: 220px 20px 24px;
+  padding: clamp(140px, 18vw, 220px) 0 clamp(18px, 4vw, 42px);
 }
+
 .sky-decoration,
 .paper-plane-intro {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
+
+.sky-decoration::before,
+.sky-decoration::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  opacity: 0.42;
+  filter: blur(1px);
+}
+
+.sky-decoration::before {
+  top: 16%;
+  left: 7%;
+  width: 180px;
+  height: 180px;
+  background: conic-gradient(from 90deg, rgba(124, 58, 237, 0.2), rgba(6, 182, 212, 0.2), rgba(255, 255, 255, 0));
+  animation: slowSpin 24s linear infinite;
+}
+
+.sky-decoration::after {
+  right: 4%;
+  bottom: 8%;
+  width: 260px;
+  height: 260px;
+  background: conic-gradient(from 180deg, rgba(249, 115, 22, 0.18), rgba(124, 58, 237, 0.14), transparent 58%);
+  animation: slowSpin 30s linear reverse infinite;
+}
+
 .cloud {
   position: absolute;
-  width: 150px;
-  height: 52px;
+     width: 155px;
+  height: 56px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 40px -18px 0 12px rgba(255, 255, 255, 0.76), 82px 0 0 5px rgba(255, 255, 255, 0.72);
-  filter: drop-shadow(0 12px 16px rgba(8, 76, 42, 0.08));
-  animation: cloudFloat 8s ease-in-out infinite;
+      background: rgba(255, 255, 255, 0.72);
+  box-shadow:
+    38px -20px 0 12px rgba(255, 255, 255, 0.64),
+    84px 1px 0 7px rgba(255, 255, 255, 0.58),
+    0 18px 40px rgba(79, 70, 229, 0.1);
+  backdrop-filter: blur(8px);
+  animation: cloudFloat 9s ease-in-out infinite;
 }
-.cloud-one { top: 80px; left: 3%; }
-.cloud-two { top: 145px; right: 13%; transform: scale(0.78); animation-delay: -2s; }
-.cloud-three { top: 310px; left: 72%; transform: scale(0.56); animation-delay: -4s; }
+
+.cloud-one { top: 66px; left: 2%; }
+.cloud-two { top: 128px; right: 12%; transform: scale(0.8); animation-delay: -2.5s; }
+.cloud-three { top: 315px; left: 74%; transform: scale(0.58); animation-delay: -4.8s; }
+
 .paper-plane-intro {
-  animation: introFade 1s ease 4.2s forwards;
+      animation: introSettle 1s ease 4.1s forwards;
 }
+
 .plane-trail {
   position: absolute;
   top: 178px;
-  left: 3%;
+      left: 4%;
   width: 0;
-  height: 4px;
+    height: 5px;
   border-radius: 999px;
-  background: repeating-linear-gradient(90deg, rgba(244, 196, 48, 0.95) 0 24px, transparent 24px 38px);
+    background: repeating-linear-gradient(90deg, rgba(124, 58, 237, 0.85) 0 26px, rgba(6, 182, 212, 0.85) 26px 46px, transparent 46px 64px);
+  filter: drop-shadow(0 8px 16px rgba(124, 58, 237, 0.18));
   animation: drawTrail 3.6s cubic-bezier(.2,.75,.15,1) forwards;
 }
+
 .paper-plane {
   position: absolute;
-  top: 139px;
+     top: 138px;
   left: 0;
-  width: 88px;
-  height: 64px;
+      width: 92px;
+  height: 66px;
   transform: translateX(-130px) rotate(8deg);
   animation: planeFlight 3.6s cubic-bezier(.2,.75,.15,1) forwards;
 }
+
 .wing,
 .fold {
   position: absolute;
   display: block;
 }
+
 .wing-top {
-  border-left: 88px solid #ffffff;
-  border-top: 32px solid transparent;
-  border-bottom: 7px solid transparent;
-  filter: drop-shadow(0 8px 10px rgba(8, 76, 42, 0.18));
+      border-left: 92px solid #fff;
+  border-top: 33px solid transparent;
+  border-bottom: 8px solid transparent;
+  filter: drop-shadow(0 10px 14px rgba(31, 41, 55, 0.2));
 }
+
 .wing-bottom {
   top: 30px;
-  left: 23px;
-  border-left: 62px solid #e8f0ec;
-  border-top: 0 solid transparent;
-  border-bottom: 27px solid transparent;
+      left: 24px;
+  border-left: 64px solid #e7ecff;
+  border-bottom: 29px solid transparent;
 }
+
 .fold {
-  top: 27px;
-  left: 35px;
-  width: 44px;
+      top: 28px;
+  left: 36px;
+  width: 46px;
   height: 2px;
-  background: #c9d7cf;
+      background: #cbd5e1;
   transform: rotate(-17deg);
 }
+
 .message-banner {
   position: absolute;
-  top: 120px;
+  top: 102px;
   left: 50%;
-  transform: translateX(-50%) translateY(18px) scale(0.96);
+    transform: translateX(-50%) translateY(20px) scale(0.96);
+  width: max-content;
+  max-width: min(90vw, 560px);
   padding: 16px 28px;
-  border: 3px solid var(--feu-green);
-  border-radius: 18px;
-  background: #fffdf3;
-  color: var(--feu-dark-green);
+      border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
   font-weight: 800;
-  font-size: clamp(1rem, 2.2vw, 1.45rem);
-  box-shadow: 0 18px 35px rgba(8, 76, 42, 0.16);
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(79, 70, 229, 0.18);
+  backdrop-filter: blur(18px);
   opacity: 0;
-  animation: revealMessage 0.8s ease 2.5s forwards;
+      animation: revealMessage 0.8s ease 2.35s forwards;
 }
+
 .goodluck-card {
   position: relative;
   z-index: 2;
   width: min(980px, 100%);
-  padding: clamp(28px, 5vw, 56px);
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 28px 70px rgba(8, 76, 42, 0.22);
+      padding: clamp(30px, 5.5vw, 64px);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: clamp(28px, 4vw, 48px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.85);
   text-align: center;
-  backdrop-filter: blur(8px);
+      backdrop-filter: blur(24px) saturate(135%);
 }
+
+.goodluck-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.48), rgba(6, 182, 212, 0.34), rgba(249, 115, 22, 0.34));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
 .eyebrow {
-  color: var(--feu-green);
+      display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: #5b21b6;
+  font-size: 0.78rem;
   font-weight: 900;
-  letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+    }
+
+.eyebrow::before {
+  content: "✦";
+  color: var(--accent-2);
 }
+
 .goodluck-card h1 {
-  color: var(--feu-dark-green);
-  font-size: clamp(2.4rem, 7vw, 5.6rem);
-  line-height: 0.95;
-  margin-bottom: 24px;
+      max-width: 850px;
+  margin: 0 auto 24px;
+  color: var(--ink);
+  font-size: clamp(2.6rem, 8vw, 6.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
 }
+
+.goodluck-card h1::selection,
+.goodluck-copy::selection,
+.closing-note::selection {
+  background: rgba(124, 58, 237, 0.18);
+}
+
 .goodluck-copy {
-  color: #334155;
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  line-height: 1.7;
-  max-width: 780px;
+      max-width: 760px;
   margin: 0 auto 34px;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 2vw, 1.28rem);
+  line-height: 1.75;
 }
+
 .wish-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   margin-bottom: 30px;
 }
+
 .wish-grid article {
-  padding: 24px 18px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, #fff 0%, #f7fff9 100%);
-  border: 2px solid rgba(0, 130, 72, 0.13);
+      position: relative;
+  overflow: hidden;
+  padding: 26px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: 0 18px 42px rgba(31, 41, 55, 0.08);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
+
+.wish-grid article::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+}
+
+.wish-grid article:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 24px 54px rgba(79, 70, 229, 0.16);
+}
+
 .wish-grid span {
-  display: inline-flex;
+      display: inline-grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 14px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.14), rgba(6, 182, 212, 0.14));
   font-size: 2rem;
-  margin-bottom: 10px;
-}
+
+    }
+
 .wish-grid h2 {
-  color: var(--feu-dark-green);
+      margin: 0 0 8px;
+  color: var(--ink);
   font-size: 1.08rem;
-  margin-bottom: 8px;
-}
+    }
+
 .wish-grid p,
 .closing-note {
-  color: #475569;
-  line-height: 1.5;
+      color: var(--muted);
+  line-height: 1.55;
 }
+
+.wish-grid p {
+  margin: 0;
+}
+
 .closing-note {
-  display: inline-block;
-  padding: 12px 22px;
+      display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 13px 22px;
+  border: 1px solid rgba(124, 58, 237, 0.2);
   border-radius: 999px;
-  background: var(--feu-gold);
-  color: var(--feu-dark-green);
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(6, 182, 212, 0.12));
+  color: #312e81;
   font-weight: 900;
+  box-shadow: 0 14px 32px rgba(79, 70, 229, 0.12);
 }
+
+footer {
+  padding: 22px 16px 30px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
 @keyframes planeFlight {
   0% { transform: translate(-130px, 40px) rotate(10deg); }
   58% { transform: translate(48vw, -10px) rotate(-4deg); }
   100% { transform: translate(102vw, 36px) rotate(7deg); }
 }
+
 @keyframes drawTrail {
   0% { width: 0; opacity: 0; }
   18% { opacity: 1; }
-  100% { width: 82%; opacity: 0.78; }
+  100% { width: 82%; opacity: 0.8; }
 }
+
 @keyframes revealMessage {
   to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
 }
-@keyframes introFade {
-  to { opacity: 0.35; }
+    
+@keyframes introSettle {
+  to { opacity: 0.44; }
 }
+
 @keyframes cloudFloat {
   50% { translate: 0 16px; }
 }
+
+@keyframes slowSpin {
+  to { rotate: 360deg; }
+}
+
 @media (max-width: 800px) {
-  .goodluck-main { padding: 28px 12px; }
-  .goodluck-hero { min-height: 760px; padding-top: 210px; }
+      .goodluck-main {
+    padding: 24px 12px;
+  }
+
+  .goodluck-hero {
+    min-height: 780px;
+    padding-top: 210px;
+  }
+
   .plane-trail { top: 150px; }
   .paper-plane { top: 112px; }
-  .message-banner { top: 92px; width: min(90%, 420px); text-align: center; }
-  .wish-grid { grid-template-columns: 1fr; }
-  .cloud-three { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .paper-plane,
-  .plane-trail,
-  .message-banner,
-  .paper-plane-intro,
-  .cloud {
-    animation: none;
+    
+  .message-banner {
+    top: 82px;
+    width: min(90%, 420px);
+    border-radius: 24px;
   }
+
+  .wish-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cloud-three {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .goodluck-card h1 {
+    letter-spacing: -0.06em;
+  }
+
+  .goodluck-card {
+    padding: 28px 18px;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+      *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
   .paper-plane { transform: translate(20vw, 0) rotate(8deg); }
   .plane-trail { width: 58%; opacity: 0.7; }
   .message-banner { opacity: 1; transform: translateX(-50%); }
 }
+.goodluck-main {
