@@ -1,0 +1,236 @@
+.gpt-body p {
+    font-size: 100%;
+  }
+ .claim-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .claim-form-actions {
+    flex-direction: column-reverse;
+  }
+  .claim-cancel-btn,
+  .claim-submit-btn {
+    width: 100%;
+  }
+  .claim-panel {
+    margin-top: 14px;
+  }
+  .claim-form {
+    padding: 14px;
+  }
+  .claim-form input,
+  .claim-form textarea {
+    font-size: 16px;
+  }
+  
+}
+
+/* ===== GOOD LUCK ENTRANCE TEST LANDING PAGE ===== */
+.goodluck-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eefbf4 0%, #fff8da 100%);
+}
+.goodluck-main {
+  min-height: calc(100vh - 240px);
+  height: auto;
+  padding: 48px 24px;
+  overflow: hidden;
+}
+.goodluck-hero {
+  position: relative;
+  width: min(1120px, 100%);
+  min-height: 680px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 220px 20px 24px;
+}
+.sky-decoration,
+.paper-plane-intro {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.cloud {
+  position: absolute;
+  width: 150px;
+  height: 52px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 40px -18px 0 12px rgba(255, 255, 255, 0.76), 82px 0 0 5px rgba(255, 255, 255, 0.72);
+  filter: drop-shadow(0 12px 16px rgba(8, 76, 42, 0.08));
+  animation: cloudFloat 8s ease-in-out infinite;
+}
+.cloud-one { top: 80px; left: 3%; }
+.cloud-two { top: 145px; right: 13%; transform: scale(0.78); animation-delay: -2s; }
+.cloud-three { top: 310px; left: 72%; transform: scale(0.56); animation-delay: -4s; }
+.paper-plane-intro {
+  animation: introFade 1s ease 4.2s forwards;
+}
+.plane-trail {
+  position: absolute;
+  top: 178px;
+  left: 3%;
+  width: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(90deg, rgba(244, 196, 48, 0.95) 0 24px, transparent 24px 38px);
+  animation: drawTrail 3.6s cubic-bezier(.2,.75,.15,1) forwards;
+}
+.paper-plane {
+  position: absolute;
+  top: 139px;
+  left: 0;
+  width: 88px;
+  height: 64px;
+  transform: translateX(-130px) rotate(8deg);
+  animation: planeFlight 3.6s cubic-bezier(.2,.75,.15,1) forwards;
+}
+.wing,
+.fold {
+  position: absolute;
+  display: block;
+}
+.wing-top {
+  border-left: 88px solid #ffffff;
+  border-top: 32px solid transparent;
+  border-bottom: 7px solid transparent;
+  filter: drop-shadow(0 8px 10px rgba(8, 76, 42, 0.18));
+}
+.wing-bottom {
+  top: 30px;
+  left: 23px;
+  border-left: 62px solid #e8f0ec;
+  border-top: 0 solid transparent;
+  border-bottom: 27px solid transparent;
+}
+.fold {
+  top: 27px;
+  left: 35px;
+  width: 44px;
+  height: 2px;
+  background: #c9d7cf;
+  transform: rotate(-17deg);
+}
+.message-banner {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%) translateY(18px) scale(0.96);
+  padding: 16px 28px;
+  border: 3px solid var(--feu-green);
+  border-radius: 18px;
+  background: #fffdf3;
+  color: var(--feu-dark-green);
+  font-weight: 800;
+  font-size: clamp(1rem, 2.2vw, 1.45rem);
+  box-shadow: 0 18px 35px rgba(8, 76, 42, 0.16);
+  opacity: 0;
+  animation: revealMessage 0.8s ease 2.5s forwards;
+}
+.goodluck-card {
+  position: relative;
+  z-index: 2;
+  width: min(980px, 100%);
+  padding: clamp(28px, 5vw, 56px);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 28px 70px rgba(8, 76, 42, 0.22);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+.eyebrow {
+  color: var(--feu-green);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.goodluck-card h1 {
+  color: var(--feu-dark-green);
+  font-size: clamp(2.4rem, 7vw, 5.6rem);
+  line-height: 0.95;
+  margin-bottom: 24px;
+}
+.goodluck-copy {
+  color: #334155;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.7;
+  max-width: 780px;
+  margin: 0 auto 34px;
+}
+.wish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+.wish-grid article {
+  padding: 24px 18px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #fff 0%, #f7fff9 100%);
+  border: 2px solid rgba(0, 130, 72, 0.13);
+}
+.wish-grid span {
+  display: inline-flex;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.wish-grid h2 {
+  color: var(--feu-dark-green);
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+}
+.wish-grid p,
+.closing-note {
+  color: #475569;
+  line-height: 1.5;
+}
+.closing-note {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--feu-gold);
+  color: var(--feu-dark-green);
+  font-weight: 900;
+}
+@keyframes planeFlight {
+  0% { transform: translate(-130px, 40px) rotate(10deg); }
+  58% { transform: translate(48vw, -10px) rotate(-4deg); }
+  100% { transform: translate(102vw, 36px) rotate(7deg); }
+}
+@keyframes drawTrail {
+  0% { width: 0; opacity: 0; }
+  18% { opacity: 1; }
+  100% { width: 82%; opacity: 0.78; }
+}
+@keyframes revealMessage {
+  to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+@keyframes introFade {
+  to { opacity: 0.35; }
+}
+@keyframes cloudFloat {
+  50% { translate: 0 16px; }
+}
+@media (max-width: 800px) {
+  .goodluck-main { padding: 28px 12px; }
+  .goodluck-hero { min-height: 760px; padding-top: 210px; }
+  .plane-trail { top: 150px; }
+  .paper-plane { top: 112px; }
+  .message-banner { top: 92px; width: min(90%, 420px); text-align: center; }
+  .wish-grid { grid-template-columns: 1fr; }
+  .cloud-three { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .paper-plane,
+  .plane-trail,
+  .message-banner,
+  .paper-plane-intro,
+  .cloud {
+    animation: none;
+  }
+  .paper-plane { transform: translate(20vw, 0) rotate(8deg); }
+  .plane-trail { width: 58%; opacity: 0.7; }
+  .message-banner { opacity: 1; transform: translateX(-50%); }
+}
